@@ -1,5 +1,5 @@
 package com.vootrancy.model.entities;
 
-public abstract class Voo {
+public class VooEconomico extends Voo{
     
 }

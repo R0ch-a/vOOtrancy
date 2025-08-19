@@ -1,132 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>vOOTrancy</title>
-        <!-- <style> -->
-        <link rel="stylesheet" href="style.css">
-        <!-- </style> -->
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="https://cdn.webcrumbs.org/assets/images/landing/favicon.ico" />
-        <link
-            rel="apple-touch-icon"
-            sizes="192x192"
-            href="https://cdn.webcrumbs.org/assets/images/landing/logo192.png"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="512x512"
-            href="https://cdn.webcrumbs.org/assets/images/landing/logo512.png"
-        />
-        <meta name="theme-color" content="#ffffff" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Webcrumbs" />
-    </head>
-    <body>
-        <div id="webcrumbs">
-            <div class="flex flex-col w-full">
-                <div class="bg-gray-100 p-6 rounded-xl">
-                    <div class="flex
-                     justify-between mb-6">
-                        <div class="flex items-center space-x-2">
-                            <span class="material-symbols-outlined">sync_alt</span> <span>Ida e volta</span>
-                            <span class="material-symbols-outlined">expand_more</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <span class="material-symbols-outlined">person</span> <span>1 Adulto</span>
-                            <span class="material-symbols-outlined">expand_more</span>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-12 gap-3">
-                        <div class="col-span-3">
-                            <div class="mb-1 text-sm font-medium">Origem</div>
-                            <div class="flex items-center bg-white p-3 rounded">
-                                <input
-                                    type="text"
-                                    placeholder="Digite o local ou aeroporto"
-                                    class="w-full outline-none"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-span-3">
-                            <div class="flex items-center justify-between mb-1">
-                                <span class="text-sm font-medium">Destino</span>
-                                <span class="material-symbols-outlined">sync_alt</span>
-                            </div>
-                            <div class="flex items-center bg-white p-3 rounded">
-                                <input
-                                    type="text"
-                                    placeholder="Digite o local ou aeroporto"
-                                    class="w-full outline-none"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-span-2">
-                            <div class="mb-1 text-sm font-medium">Ida</div>
-                            <div class="flex items-center justify-between bg-white p-3 rounded">
-                                <span class="text-gray-400">Qui, 14/08</span>
-                                <span class="material-symbols-outlined">calendar_month</span>
-                            </div>
-                        </div>
-                        <div class="col-span-2">
-                            <div class="mb-1 text-sm font-medium">Volta</div>
-                            <div class="flex items-center justify-between bg-white p-3 rounded">
-                                <span class="text-gray-400">Qui, 14/08</span>
-                                <span class="material-symbols-outlined">calendar_month</span>
-                            </div>
-                        </div>
-                        <div class="col-span-2">
-                            <div class="h-full flex items-end">
-                                <button
-                                    class="bg-orange-500 text-white font-medium py-3 px-4 rounded w-full hover:bg-orange-600 transition-colors"
-                                >
-                                    Buscar voos
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative bg-orange-500 rounded-xl mt-4 overflow-hidden">
-                    <div class="grid grid-cols-12">
-                        <div class="col-span-5 p-12 text-white">
-                            <h2 class="text-3xl font-bold mb-3">Aruba fica logo ali com nosso voo direto.</h2>
-                            <p class="mb-6">Embarque com a GOL, a única Companhia que liga o Brasil a Aruba.</p>
-                            <button
-                                class="bg-white text-gray-800 font-medium py-2 px-6 rounded-full hover:bg-gray-100 transition-colors"
-                            >
-                                Explorar destinos
-                            </button>
-                        </div>
-                        <div class="col-span-7 relative">
-                            <img
-                                src="https://images.unsplash.com/photo-1633421332483-1aa89f0c6b9a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w3MzkyNDZ8MHwxfHNlYXJjaHwxfHxhcnViYXxlbnwwfHx8fDE3NTUxNzY1OTJ8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080"
-                                alt="Woman with arms raised at a beach in Aruba"
-                                class="w-full h-full object-cover"
-                                keywords="aruba, beach, vacation, travel, sea, tourism"
-                            />
-                            <div class="absolute bottom-10 right-10 text-right text-white">
-                                <h3 class="text-2xl font-bold">Inteligência</h3>
-                                <div class="flex items-center justify-end">
-                                    <p class="text-2xl font-bold">faz a gente voar</p>
-                                    <span class="material-symbols-outlined ml-1">flight</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button
-                        class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/30 p-1 rounded-full hover:bg-white/50 transition-colors"
-                    >
-                        <span class="material-symbols-outlined text-white">chevron_left</span>
-                    </button>
-                    <button
-                        class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/30 p-1 rounded-full hover:bg-white/50 transition-colors"
-                    >
-                        <span class="material-symbols-outlined text-white">chevron_right</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </body>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Agência de Viagens - Pesquisa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-align: left;
+    }
+
+    label {
+      font-weight: bold;
+      color: #555;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      background: #007BFF;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      padding: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .history-link {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
+    }
+
+    .history-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pesquise sua Viagem ✈️</h1>
+    <form action="/src/main/resources/templates/voos.html" method="post">
+      <div>
+        <label for="destino">Destino:</label>
+        <!-- <input type="text" id="destino" name="destino" placeholder="Ex: São Paulo" required> -->
+        <select id="destino" name="destino">
+          <option value="guarulhos">Guarulhos (GRU) - SP</option>
+          <option value="brasilia">Brasília (BSB) - DF</option>
+          <option value="galeao">Galeão (GIG) - RJ</option>
+          <option value="confins">Confins (CNF) - MG</option>
+          <option value="recife">Recife (REC) - PE</option>
+          <option value="salvador">Salvador (SSA) - BA</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="ida">Data de Ida:</label>
+        <input type="date" id="ida" name="ida" required>
+      </div>
+
+      <div>
+        <label for="volta">Data de Volta:</label>
+        <input type="date" id="volta" name="volta">
+      </div>
+
+      <div>
+        <label for="quantidade">Número de Passagens:</label>
+        <input type="number" id="quantidade" name="quantidade" min="1" value="1" max="10">
+      </div>
+
+      <div>
+        <label for="classe">Classe:</label>
+        <select id="classe" name="classe">
+          <option value="economica">Econômica</option>
+          <option value="executiva">Executiva</option>
+        </select>
+      </div>
+
+      <button type="submit">PESQUISAR</button>
+    </form>
+
+    <a class="history-link" href="/src/main/resources/templates/history.html">📜 Histórico de Busca</a>
+  </div>
+</body>
 </html>
