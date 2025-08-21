@@ -1,5 +1,5 @@
 package com.vootrancy.model.entities;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
 // import Voo;
 
