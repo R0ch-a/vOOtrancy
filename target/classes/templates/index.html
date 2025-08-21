@@ -80,7 +80,8 @@
 <body>
   <div class="container">
     <h1>Pesquise sua Viagem ✈️</h1>
-    <form action="/src/main/resources/templates/voos.html" method="post">
+    <form action="/salvarHistorico" method="post">
+    <!-- <form action="/src/main/resources/templates/voos.html" method="post"> -->
       <div>
         <label for="destino">Destino:</label>
         <!-- <input type="text" id="destino" name="destino" placeholder="Ex: São Paulo" required> -->
@@ -95,25 +96,25 @@
       </div>
 
       <div>
-        <label for="ida">Data de Ida:</label>
-        <input type="date" id="ida" name="ida" required>
+        <label for="dataVolta">Data de Ida:</label>
+        <input type="date" id="dataIda" name="dataIda" required>
       </div>
 
       <div>
-        <label for="volta">Data de Volta:</label>
-        <input type="date" id="volta" name="volta">
+        <label for="dataVolta">Data de Volta:</label>
+        <input type="date" id="dataVolta" name="dataVolta" required>
       </div>
 
       <div>
-        <label for="quantidade">Número de Passagens:</label>
-        <input type="number" id="quantidade" name="quantidade" min="1" value="1" max="10">
+        <label for="numPassagens">Número de Passagens:</label>
+        <input type="number" id="numPassagens" name="numPassagens" min="1" max="10" placeholder="Máx: 10" required>
       </div>
 
       <div>
         <label for="classe">Classe:</label>
-        <select id="classe" name="classe">
-          <option value="economica">Econômica</option>
-          <option value="executiva">Executiva</option>
+        <select id="classe" name="classe" required>
+          <option value="Econômica">Econômica</option>
+          <option value="Executiva">Executiva</option>
         </select>
       </div>
 
