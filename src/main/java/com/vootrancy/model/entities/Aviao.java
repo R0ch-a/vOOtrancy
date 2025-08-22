@@ -1,5 +1,4 @@
 package com.vootrancy.model.entities;
-//import java.util.ArrayList;
 import java.util.List;
 // import Voo;
 
@@ -9,17 +8,16 @@ public class Aviao {
     public List<String> poltronasLivres;
     public List<String> poltronasOcupadas;
     protected int maxLotacao;
-    protected Voo vooTipo;
+    protected Short portao;
     
 
-    public Aviao(String nome, String modelo, List<String> poltronasLivres, List<String> poltronasOcupadas, int lotacaoMaxima, Voo tipoVoo){
-        // super(marcaNome, modeloNome);
+    public Aviao(String nome, String modelo, List<String> poltronasLivres, List<String> poltronasOcupadas, int lotacaoMaxima, short portao){
         this.nome = nome;
         this.modelo = modelo;
         this.poltronasLivres = poltronasLivres;
         this.poltronasOcupadas = poltronasOcupadas;
         this.maxLotacao = lotacaoMaxima;
-        this.vooTipo = tipoVoo;
+        this.portao = portao;
     }
 
     public String getNome(){
@@ -37,10 +35,11 @@ public class Aviao {
     public int getLotacao(){
         return maxLotacao;
     }
-    public Voo getVooTipo(){
-        return vooTipo;
+    public short getPortao(){
+        return portao;
     }
 
+    // Se o voo for da classe executiva, tera algumas poltras para escolher, se nao for, tera outras
     // Adiciona passageiro a lista de poltronas ocupadas.
     //@param poltrona: O nome da poltrona a ser ocupada (ex: "12A").
     public void setAddPassageiro(String poltrona){

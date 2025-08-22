@@ -4,18 +4,18 @@ import java.text.SimpleDateFormat;
 public class Passagem {
     private Passageiro passageiro;
     private Voo voo;
-    private Aviao aviao;
     private String portao;
-    private SimpleDateFormat dia;
-    private SimpleDateFormat hora;
+    private SimpleDateFormat diaIda;
+    private SimpleDateFormat horaIda;
+    private SimpleDateFormat diaVolta;
+    private SimpleDateFormat horaVolta;
 
-    public Passagem(Passageiro passageiro, Voo voo, Aviao aviao, String portao, SimpleDateFormat data, SimpleDateFormat horario) {
+    public Passagem(Passageiro passageiro, Voo voo, SimpleDateFormat data, SimpleDateFormat horario) {
         this.passageiro = passageiro;
         this.voo = voo;
-        this.aviao = aviao;
-        this.portao = portao;
-        this.dia = new SimpleDateFormat("dd/MM/yyyy");
-        this.hora = new SimpleDateFormat("HH:mm");
+        // this.portao = voo.getAviao().getPortao();
+        this.diaIda = new SimpleDateFormat("dd/MM/yyyy");
+        this.horaIda = new SimpleDateFormat("HH:mm");
     }
 
     public Passageiro getPassageiro() {
@@ -27,19 +27,28 @@ public class Passagem {
     }
 
     public Aviao getAviao() {
-        return aviao;
+        return voo.aviao;
     }
 
     public String getPortao() {
+        // this.portao = voo.getAviao().getPortao();
         return portao;
     }
 
-    public SimpleDateFormat getDia() {
-        return dia;
+    public SimpleDateFormat getDiaIda() {
+        return diaIda;
     }
 
-    public SimpleDateFormat getHora() {
-        return hora;
+    public SimpleDateFormat getHoraIda() {
+        return horaIda;
+    }
+
+        public SimpleDateFormat getDiaVolta() {
+        return diaVolta;
+    }
+
+    public SimpleDateFormat getHoraVolta() {
+        return horaVolta;
     }
 
     public void setPassageiro(Passageiro passageiro) {
@@ -50,19 +59,19 @@ public class Passagem {
         this.voo = voo;
     }
 
-    public void setAviao(Aviao aviao) {
-        this.aviao = aviao;
+    public void setDiaIda(SimpleDateFormat dia) {
+        this.diaIda = dia;
     }
 
-    public void setPortao(String portao) {
-        this.portao = portao;
+    public void setHoraIda(SimpleDateFormat hora) {
+        this.horaIda = hora;
     }
 
-    public void setDia(SimpleDateFormat dia) {
-        this.dia = dia;
+        public void setDiaVolta(SimpleDateFormat dia) {
+        this.diaVolta = dia;
     }
 
-    public void setHora(SimpleDateFormat hora) {
-        this.hora = hora;
+    public void setHoraVolta(SimpleDateFormat hora) {
+        this.horaVolta = hora;
     }
 }
