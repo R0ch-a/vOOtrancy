@@ -7,6 +7,7 @@ public class Passageiro extends Pessoa {
     private int quantBagagens;
     // ---
     
+    // Construtor
     public Passageiro (String nome, int idade, String cpf, int quantBagagens) {
         super(nome, idade, cpf);
         this.quantBagagens = quantBagagens;
@@ -28,6 +29,12 @@ public class Passageiro extends Pessoa {
 
     public void setQtdeBagagens(int quantBagagens){
         this.quantBagagens = quantBagagens;
+    }
+    // ---
+
+    // Metodo toString
+    public String toString() {
+        return nome + "," + idade + "," + cpf + "," + quantBagagens;
     }
     // ---
 }

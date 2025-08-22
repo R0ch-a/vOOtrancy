@@ -20,4 +20,9 @@ public class Historico {
         this.classe = classe;
     }
     // ---
+
+    // Metodo toString
+    public String toString() {
+        return destino + "," + dataDeIda + "," + dataDeVolta + "," + numeroPassagens + "," + classe;
+    }
 }

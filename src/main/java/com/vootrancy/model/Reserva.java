@@ -17,6 +17,6 @@ public class Reserva {
 
     @Override
     public String toString () {
-        return aeroporto + " " + aviao + " " + passagem + " " + quantPassagem;
+        return aeroporto + "," + aviao + "," + passagem + "," + quantPassagem;
     }
 }
