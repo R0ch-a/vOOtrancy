@@ -22,13 +22,16 @@ public class Passageiro {
         return documentoID;
     }
     public String getNome(){
-        return nome;
+        return this.nome;
     }
-    public int getQtdeBagagens(){
-        return qtdeBagagens;
+    public int getIdade(){
+        return this.idade;
     }
-    public Voo getVoo(){
-        return voo;
+    public String getCpf(){
+        return this.cpf;
+    }
+    public int getQuantBagagens(){
+        return this.quantBagagens;
     }
     public Date getNascimento(){
         return nascimento;

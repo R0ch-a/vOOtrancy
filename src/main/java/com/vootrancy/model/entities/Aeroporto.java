@@ -1,33 +1,26 @@
 package com.vootrancy.model.entities;
 
-public class Aeroporto {
-    private String nome;
-    private String sigla;
-    private String cidade;
-    private double distancia;
-    private double tempoVoo;
-    
-    public Aeroporto (String nome, String sigla, String cidade, double distancia, double tempo){
-        this.nome = nome;
-        this.sigla = sigla;
-        this.cidade = cidade;
-        this.distancia = distancia;
-        this.tempoVoo = tempo;
-    }
+import com.vootrancy.model.*;
 
-    public String getNome(){
-        return nome;
+public class Aeroporto {
+    // Atributos
+    private String cidade;
+    private String sigla;
+    private Aviao aviao;
+    private int tempoVooMinutos;
+    // ---
+
+    // Contrutor
+    public Aeroporto (String cidade, String sigla, Aviao aviao, int tempoVooMinutos) {
+        this.cidade = cidade;
+        this.sigla = sigla;
+        this.aviao = aviao;
+        this.tempoVooMinutos = tempoVooMinutos;
     }
-    public String getSigla(){
-        return sigla;
-    }
-    public String getCidade(){
-        return cidade;
-    }
-    public double getDistancia(){
-        return distancia;
-    }
-    public double getTempoVoo(){
-        return tempoVoo;
+    // ---
+    
+    // metodo toString
+    public String toString () {
+        return cidade + "-" + sigla;
     }
 }

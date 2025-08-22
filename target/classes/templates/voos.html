@@ -88,13 +88,56 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Thymeleaf itera -->
+        <tr th:each="flight : ${flights}">
+          <td th:text="${flight.horario}">04:30</td>
+          <td th:text="${flight.duracao}">2h 30m</td>
+          <td th:text="${flight.preco}">R$ 550</td>
+          <td>
+            <form action="/src/main/resources/templates/cadastro.html" method="post">
+              <input type="hidden" name="flightId" th:value="${flight.id}" />
+              <button type="submit">RESEVAR</button>
+            </form>
+          </td>
+        </tr>
         <tr th:each="flight : ${flights}">
           <td th:text="${flight.horario}">08:30</td>
           <td th:text="${flight.duracao}">2h 30m</td>
           <td th:text="${flight.preco}">R$ 550</td>
           <td>
-            <form action="/src/main/resources/templates/confirm.html" method="post">
+            <form action="/src/main/resources/templates/cadastro.html" method="post">
+              <input type="hidden" name="flightId" th:value="${flight.id}" />
+              <button type="submit">RESEVAR</button>
+            </form>
+          </td>
+        </tr>
+        <tr th:each="flight : ${flights}">
+          <td th:text="${flight.horario}">12:30</td>
+          <td th:text="${flight.duracao}">2h 30m</td>
+          <td th:text="${flight.preco}">R$ 550</td>
+          <td>
+            <form action="/src/main/resources/templates/cadastro.html" method="post">
+              <input type="hidden" name="flightId" th:value="${flight.id}" />
+              <button type="submit">RESEVAR</button>
+            </form>
+          </td>
+        </tr>
+        <tr th:each="flight : ${flights}">
+          <td th:text="${flight.horario}">16:30</td>
+          <td th:text="${flight.duracao}">2h 30m</td>
+          <td th:text="${flight.preco}">R$ 550</td>
+          <td>
+            <form action="/src/main/resources/templates/cadastro.html" method="post">
+              <input type="hidden" name="flightId" th:value="${flight.id}" />
+              <button type="submit">RESEVAR</button>
+            </form>
+          </td>
+        </tr>
+        <tr th:each="flight : ${flights}">
+          <td th:text="${flight.horario}">20:30</td>
+          <td th:text="${flight.duracao}">2h 30m</td>
+          <td th:text="${flight.preco}">R$ 550</td>
+          <td>
+            <form action="/src/main/resources/templates/cadastro.html" method="post">
               <input type="hidden" name="flightId" th:value="${flight.id}" />
               <button type="submit">RESEVAR</button>
             </form>
