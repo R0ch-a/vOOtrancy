@@ -21,20 +21,22 @@ public class Passageiro {
     public int getDocumentoID(){
         return documentoID;
     }
+
     public String getNome(){
         return this.nome;
     }
-    public int getIdade(){
-        return this.idade;
+    
+    public int getQtdeBagagens(){
+        return this.qtdeBagagens;
     }
-    public String getCpf(){
-        return this.cpf;
+  
+    public Voo getVoo(){
+        return voo;
     }
-    public int getQuantBagagens(){
-        return this.quantBagagens;
-    }
+  
     public Date getNascimento(){
         return nascimento;
+      
     }
     public String getGenero(){
         return genero;
@@ -48,5 +50,10 @@ public class Passageiro {
     }
     public void setVoo(Voo voo){
         this.voo = voo;
+    }
+
+    // Metodo toString
+    public String toString() {
+        return nome + "," + nascimento + "," + documentoID + "," + qtdeBagagens;
     }
 }
