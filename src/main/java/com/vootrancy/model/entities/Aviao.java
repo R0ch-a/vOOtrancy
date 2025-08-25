@@ -5,10 +5,10 @@ import java.util.List;
 public class Aviao {
     private String nome;
     private String modelo;
-    public List<String> poltronasLivres;
-    public List<String> poltronasOcupadas;
-    protected int maxLotacao;
-    protected Short portao;
+    private List<String> poltronasLivres;
+    private List<String> poltronasOcupadas;
+    private int maxLotacao;
+    private Short portao;
     
 
     public Aviao(String nome, String modelo, List<String> poltronasLivres, List<String> poltronasOcupadas, int lotacaoMaxima, short portao){
