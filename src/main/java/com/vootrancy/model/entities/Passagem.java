@@ -1,4 +1,4 @@
-package com.vootrancy.model.entities;
+epackage com.vootrancy.model.entities;
 import java.text.SimpleDateFormat;
 
 public class Passagem {
@@ -27,7 +27,7 @@ public class Passagem {
     }
 
     public Aviao getAviao() {
-        return voo.aviao;
+        return voo.getAviao();
     }
 
     public String getPortao() {
