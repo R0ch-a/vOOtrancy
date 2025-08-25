@@ -14,6 +14,12 @@
     <groupId>com.vootracy</groupId>
     <artifactId>vootracy</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>demo</module>
+        <module>demo</module>
+        <module>demo</module>
+    </modules>
     <name>VooTracy</name>
     <description>Sistema de agência de viagens com persistência em arquivo .txt</description>
 

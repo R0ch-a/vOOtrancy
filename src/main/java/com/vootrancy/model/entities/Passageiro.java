@@ -1,59 +1,46 @@
 package com.vootrancy.model.entities;
-import java.util.Date;
 
-public class Passageiro {
-    private int documentoID;
-    private String nome;
+import java.time.LocalDate;
+
+import com.vootrancy.model.entities.Pessoa;
+
+public class Passageiro  extends Pessoa {
+    // Os atributos documentoID e nome herdam da classe Pessoa
+    // Atributos exclusivos da classe Passageiro
     private int qtdeBagagens;
-    private Voo voo;
-    private Date nascimento;
     private String genero;
-
-    public Passageiro (int id, String nome, int qtde, Voo voo, Date nascimento, String genero){
-        this.documentoID = id;
-        this.nome = nome;
-        this.qtdeBagagens = qtde;
-        this.voo = voo;
-        this.nascimento = nascimento;
+    // ---
+    
+    // Construtor
+    public Passageiro (String documentoID, String nome, LocalDate nascimento, int qtdeBagagens, String genero){
+        super(documentoID, nome, nascimento)
+        this.qtdeBagagens = qtdeBagagens;
         this.genero = genero;
     }
-
-    public int getDocumentoID(){
-        return documentoID;
-    }
-
-    public String getNome(){
-        return this.nome;
-    }
+    // ---
     
+    // Metodos getters de todos os atributos exclusivos, nao sobrescrito os herdados da classe pessoa
     public int getQtdeBagagens(){
         return this.qtdeBagagens;
     }
-  
-    public Voo getVoo(){
-        return voo;
-    }
-  
-    public Date getNascimento(){
-        return nascimento;
-      
-    }
+    
     public String getGenero(){
-        return genero;
+        return this.genero;
     }
-
-    // Melhor criar um set para todos os atributos que serao escolhidos por botao.
-    // Ou seja, fazer uma sobrecarga de construtor para receber menos parametros e criar o objeto mesmo assim.
-    // Tudo que precisar adicionar ao clicar botoes chamara metodos.
-    public void setQtdeBagagens(int qtde){
-        qtdeBagagens = qtde;
+    // ---
+    
+    // Metodos setters dos atributos permitidos
+    public void setGenero(String genero){
+        this.genero = genero;
     }
-    public void setVoo(Voo voo){
-        this.voo = voo;
+    public void setQtdeBagagens(int qtdeBagagens){
+        this.qtdeBagagens = qtdeBagagens;
     }
-
+    // ---
+    
     // Metodo toString
     public String toString() {
-        return nome + "," + nascimento + "," + documentoID + "," + qtdeBagagens;
+        return super.toString() + nascimento + "," + qtdeBagagens + "," + genero;
     }
+    // ---
 }

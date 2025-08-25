@@ -5,10 +5,10 @@ import java.util.List;
 public class Aviao {
     private String nome;
     private String modelo;
-    public List<String> poltronasLivres;
-    public List<String> poltronasOcupadas;
-    protected int maxLotacao;
-    protected Short portao;
+    private List<String> poltronasLivres;
+    private List<String> poltronasOcupadas;
+    private int maxLotacao;
+    private Short portao;
     
 
     public Aviao(String nome, String modelo, List<String> poltronasLivres, List<String> poltronasOcupadas, int lotacaoMaxima, short portao){
@@ -39,8 +39,6 @@ public class Aviao {
         return portao;
     }
 
-    // Se o voo for da classe executiva, tera algumas poltras para escolher, se nao for, tera outras
-    // Adiciona passageiro a lista de poltronas ocupadas.
     //@param poltrona: O nome da poltrona a ser ocupada (ex: "12A").
     public void setAddPassageiro(String poltrona){
         if (poltronasOcupadas.size() < maxLotacao && poltronasLivres.contains(poltrona)) {
