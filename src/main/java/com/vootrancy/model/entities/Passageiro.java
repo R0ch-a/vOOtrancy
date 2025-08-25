@@ -16,6 +16,8 @@ public class Passageiro {
         this.genero = genero;
     }
 
+    public Passageiro() {}
+
     public int getDocumentoID(){
         return documentoID;
     }
@@ -36,9 +38,18 @@ public class Passageiro {
         return genero;
     }
 
-    // Melhor criar um set para todos os atributos que serao escolhidos por botao.
-    // Ou seja, fazer uma sobrecarga de construtor para receber menos parametros e criar o objeto mesmo assim.
-    // Tudo que precisar adicionar ao clicar botoes chamara metodos.
+    public void setDocumentoID(int id){
+        this.documentoID = id;
+    }
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    public void setNascimento(Date data){
+        this.nascimento = data;
+    }
+    public void setGenero(String genero){
+        this.genero = genero;
+    }
     public void setQtdeBagagens(int qtde){
         qtdeBagagens = qtde;
     }
