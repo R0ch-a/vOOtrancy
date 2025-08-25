@@ -13,7 +13,7 @@ public class Passagem {
     public Passagem(Passageiro passageiro, Voo voo, SimpleDateFormat data, SimpleDateFormat horario) {
         this.passageiro = passageiro;
         this.voo = voo;
-        // this.portao = voo.getAviao().getPortao();
+        this.portao = voo.getAviao().getPortao();
         this.diaIda = new SimpleDateFormat("dd/MM/yyyy");
         this.horaIda = new SimpleDateFormat("HH:mm");
     }
@@ -31,8 +31,7 @@ public class Passagem {
     }
 
     public String getPortao() {
-        // this.portao = voo.getAviao().getPortao();
-        return portao;
+        return voo.getAviao().getPortao();
     }
 
     public SimpleDateFormat getDiaIda() {
