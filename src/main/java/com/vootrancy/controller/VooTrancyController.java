@@ -33,23 +33,37 @@ public class VooTrancyController {
             @RequestParam int numPassagens,
             @RequestParam String classe
     ) {
-        Historico historico = new Historico(destino, LocalDate.parse(dataIda), LocalDate.parse(dataVolta), numPassagens, classe);
-        service.salvarHistorico(historico);
+        // Historico historico = new Historico(destino, LocalDate.parse(dataIda), LocalDate.parse(dataVolta), numPassagens, classe);
+        // service.salvarHistorico(historico);
+        service.salvarHistorico(destino, LocalDate.parse(dataIda), LocalDate.parse(dataVolta), numPassagens, classe);
         // Redireciona o usuario para a pagina de opcoes de voo
-        return "redirect:/src/main/resources/templates/voos.html";
+        return "redirect:/voos.html";
     }
-
 
     @GetMapping("/carregarHistorico")
-    public String carregarHistorico(Model model) {
-        try {
-            List<String> linhas = Files.readAllLines(Paths.get("historico.txt"));
-            model.addAttribute("historico", linhas);
-        } catch (IOException e) {
-            model.addAttribute("historico", List.of("Nenhum histórico encontrado."));
-        }
-        return "history";
+    public List<String> carregarHistorico() {
+        return service.carregarHistorico();
+    }
+    
+    
+    @PostMapping("/salvarRegistro")
+    public String salvarRegistro(
+            @RequestParam String documentoID,
+            @RequestParam String nome,
+            @RequestParam String nascimento,
+            @RequestParam int qtdeBagagens,
+            @RequestParam String genero
+    ) {
+        
+        service.salvarRegistro(documentoID, nome, LocalDate.parse(nascimento), qtdeBagagens, genero);
+        // Redireciona o usuario para a pagina de opcoes de voo
+        return "redirect:/confirm.html";
     }
 
+    @GetMapping("/carregarRegistro")
+    public List<String> carregarRegistro() {
+        return service.carregarRegistro();
+    }
 }
+
 

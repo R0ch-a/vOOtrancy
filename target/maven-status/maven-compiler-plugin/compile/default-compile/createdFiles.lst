@@ -1,0 +1,12 @@
+com\vootrancy\controller\VooTrancyController.class
+com\vootrancy\model\entities\Passageiro.class
+com\vootrancy\model\entities\Passagem.class
+com\vootrancy\model\entities\Aeroporto.class
+com\vootrancy\model\entities\Aviao.class
+com\vootrancy\model\entities\Voo.class
+com\vootrancy\model\entities\Pessoa.class
+com\vootrancy\controller\PassagemController.class
+com\vootrancy\controller\VooController.class
+com\vootrancy\service\VooService.class
+com\vootrancy\controller\PassageiroController.class
+com\vootrancy\model\Reserva.class
