@@ -1,64 +1,58 @@
 package com.vootrancy.service;
 
-import com.vootrancy.model.entities.Historico;
-import com.vootrancy.model.entities.Passageiro;
-
-import java.io.FileWriter;
+import org.junit.jupiter.api.*;
 import java.io.IOException;
 import java.nio.file.*;
 import java.time.LocalDate;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
+import static org.junit.jupiter.api.Assertions.*;
 
-@Service
-public class VooTrancyService {
-    
-    private final Path historicoPath = Path.of("historico.txt");
-    private final Path registroPath = Path.of("registro.txt");
+class VooTrancyServiceTest {
 
+    private VooTrancyService service;
+    private Path historicoPath = Path.of("historico.txt");
+    private Path registroPath = Path.of("registro.txt");
 
-    public void salvarHistorico (String destino , LocalDate dataIda , LocalDate dataVolta , int numPassagens , String classe ) {
-        // try-catch - tratamento de excecao caso nao consiga acessar o arquivo para salvar as escolhas de pesquisa do usuario
-        try (FileWriter historicoWriter = new FileWriter("historico.txt", true)) {
-            historicoWriter.write(destino + "," + dataIda + "," + dataVolta + "," + numPassagens + "," + classe + "\n");
-            // Files.writeString(historicoPath, historico + System.lineSeparator(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-        } catch (IOException e) {
-            throw new RuntimeException("Erro ao salvar histórico: " + e.getMessage(), e);
-        }
+    @BeforeEach
+    void setUp() throws IOException {
+        service = new VooTrancyService();
+        // Apaga os arquivos antes de cada teste, para começar limpo
+        Files.deleteIfExists(historicoPath);
+        Files.deleteIfExists(registroPath);
     }
-    
-    public List<String> carregarHistorico () {
-        // try-catch - tratamento de excecao caso nao consiga acessar o arquivo para ler as escolhas de pesquisa do usuario
-        try {
-            if (Files.exists(historicoPath)) {
-                return Files.readAllLines(historicoPath);
-            }
-        } catch (IOException e) {
-            throw new RuntimeException("Erro ao carregar histórico" + e.getMessage(), e);
-        }
-        return List.of();
+
+    @Test
+    void testSalvarECarregarHistorico() {
+        service.salvarHistorico("Paris", LocalDate.of(2025, 1, 10),
+                LocalDate.of(2025, 1, 20), 2, "Econômica");
+
+        List<String> historico = service.carregarHistorico();
+
+        assertFalse(historico.isEmpty(), "O histórico não deve estar vazio");
+        assertTrue(historico.get(0).contains("Paris"), "Deve conter o destino 'Paris'");
     }
-    // --------------------------------------
-    public void salvarRegistro (String documentoID, String nome, LocalDate nascimento, int qtdeBagagens, String genero) {
-        // try-catch - tratamento de excecao caso nao consiga acessar o arquivo para salvar as escolhas de pesquisa do usuario
-        try (FileWriter registroWriter = new FileWriter("registro.txt", true)) {
-            registroWriter.write(documentoID + "," + nome + "," + nascimento + "," + qtdeBagagens + "," + genero + "\n");
-            // Files.writeString(historicoPath, historico + System.lineSeparator(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-        } catch (IOException e) {
-            throw new RuntimeException("Erro ao salvar registro: " + e.getMessage(), e);
-        }
+
+    @Test
+    void testSalvarECarregarRegistro() {
+        service.salvarRegistro("123456789", "João Silva",
+                LocalDate.of(1990, 5, 15), 2, "Masculino");
+
+        List<String> registros = service.carregarRegistro();
+
+        assertFalse(registros.isEmpty(), "O registro não deve estar vazio");
+        assertTrue(registros.get(0).contains("João Silva"), "Deve conter o nome 'João Silva'");
     }
-    
-    public List<String> carregarRegistro () {
-        // try-catch - tratamento de excecao caso nao consiga acessar o arquivo para ler os dados de registro do usuario
-        try {
-            if (Files.exists(registroPath)) {
-                return Files.readAllLines(registroPath);
-            }
-        } catch (IOException e) {
-            throw new RuntimeException("Erro ao carregar registros" + e.getMessage(), e);
-        }
-        return List.of();
+
+    @Test
+    void testCarregarHistoricoVazio() {
+        List<String> historico = service.carregarHistorico();
+        assertTrue(historico.isEmpty(), "Se não existir arquivo, deve retornar lista vazia");
+    }
+
+    @Test
+    void testCarregarRegistroVazio() {
+        List<String> registros = service.carregarRegistro();
+        assertTrue(registros.isEmpty(), "Se não existir arquivo, deve retornar lista vazia");
     }
 }
