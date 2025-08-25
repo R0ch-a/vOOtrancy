@@ -39,8 +39,6 @@ public class Aviao {
         return portao;
     }
 
-    // Se o voo for da classe executiva, tera algumas poltras para escolher, se nao for, tera outras
-    // Adiciona passageiro a lista de poltronas ocupadas.
     //@param poltrona: O nome da poltrona a ser ocupada (ex: "12A").
     public void setAddPassageiro(String poltrona){
         if (poltronasOcupadas.size() < maxLotacao && poltronasLivres.contains(poltrona)) {
