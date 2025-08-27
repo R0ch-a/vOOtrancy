@@ -1,5 +1,12 @@
-com\voo\airlines\model\Destino.class
-com\voo\airlines\VooApplication.class
-com\voo\airlines\controller\VooController.class
-com\voo\airlines\model\Voo.class
-com\voo\airlines\service\VooService.class
+com\vootrancy\controller\VooTrancyController.class
+com\vootrancy\model\entities\Passageiro.class
+com\vootrancy\model\entities\Passagem.class
+com\vootrancy\model\entities\Aeroporto.class
+com\vootrancy\model\entities\Aviao.class
+com\vootrancy\model\entities\Voo.class
+com\vootrancy\model\entities\Pessoa.class
+com\vootrancy\controller\PassagemController.class
+com\vootrancy\controller\VooController.class
+com\vootrancy\service\VooService.class
+com\vootrancy\controller\PassageiroController.class
+com\vootrancy\model\Reserva.class
